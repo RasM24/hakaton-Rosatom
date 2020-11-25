@@ -1,3 +1,7 @@
 <resources>
 	<string name="app_name">РОСкоммуникАТОМ</string>
+
+	<string name="tab_navigation_profile">Профиль</string>
+	<string name="tab_navigation_monitoring">Мониторинг</string>
+	<string name="tab_navigation_order_draft">Указ</string>
 </resources>

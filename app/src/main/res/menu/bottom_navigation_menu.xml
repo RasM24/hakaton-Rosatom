@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<item
+		android:id="@+id/tab_draft_order"
+		android:icon="@drawable/ic_draft_order"
+		android:title="@string/tab_navigation_order_draft" />
+
+	<item
+		android:id="@+id/tab_monitoring"
+		android:icon="@drawable/ic_monitoring"
+		android:title="@string/tab_navigation_monitoring" />
+
+	<item
+		android:id="@+id/tab_profile"
+		android:icon="@drawable/ic_account_circle"
+		android:title="@string/tab_navigation_profile" />
+</menu>

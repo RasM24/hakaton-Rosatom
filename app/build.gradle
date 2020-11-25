@@ -6,6 +6,9 @@ android {
     }
 
     dependencies {
+        implementation project(":component-navigation")
+        implementation project(":component-common")
+
         //Core
         implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.androidxViewModel}"
 

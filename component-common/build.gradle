@@ -1,0 +1,9 @@
+dependencies {
+	//Core
+	implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.androidxViewModel}"
+
+	//Coroutines
+	implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.coroutine}"
+	implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:${versions.coroutine}"
+	implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.2.0"
+}

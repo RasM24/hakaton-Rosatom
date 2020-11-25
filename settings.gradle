@@ -1,1 +1,3 @@
 include ':app'
+include ':component-common'
+include ':component-navigation'
