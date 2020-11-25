@@ -1,3 +1,3 @@
 package ru.endroad.rosatom.entity
 
-data class SensorData(val name: String, val value: Float, val threshold: Float)
+data class SensorData(val value: Float, val thresholdMin: Float?, val thresholdMax: Float?, val type: Sensor)
