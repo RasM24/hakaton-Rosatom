@@ -3,10 +3,17 @@
 	package="ru.endroad.rosatom">
 
 	<application
+		android:name=".application.App"
 		android:allowBackup="true"
 		android:icon="@mipmap/ic_rosatom"
 		android:label="@string/app_name"
 		android:supportsRtl="true"
 		android:theme="@style/ThemeRosatom.Splash">
+		<activity android:name=".application.SingleActivity">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN" />
+				<category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+		</activity>
 	</application>
 </manifest>
