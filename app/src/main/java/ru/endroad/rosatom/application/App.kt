@@ -15,6 +15,7 @@ class App : Application() {
 				navigationModule,
 				routerModule,
 				viewModelModule,
+				dataModule,
 			)
 		}
 	}
