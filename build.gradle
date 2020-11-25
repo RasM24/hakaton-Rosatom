@@ -1,0 +1,46 @@
+buildscript {
+    apply from: 'dependencies.gradle'
+
+    repositories {
+        google()
+        jcenter()
+
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.1.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}"
+        classpath 'com.google.gms:google-services:4.3.4'
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+
+    }
+}
+
+subprojects {
+    if (name == "app") apply plugin: 'com.android.application'
+    else apply plugin: 'com.android.library'
+    apply plugin: 'kotlin-android'
+    apply plugin: 'kotlin-android-extensions'
+    android {
+        compileSdkVersion 29
+        buildToolsVersion "29.0.3"
+
+        defaultConfig {
+            minSdkVersion 21
+            targetSdkVersion 29
+        }
+        kotlinOptions {
+            jvmTarget = "1.8"
+        }
+    }
+    dependencies {
+        implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}"
+        implementation "androidx.core:core-ktx:${versions.androidxCore}"
+        implementation "androidx.appcompat:appcompat:${versions.appcompat}"
+    }
+}

@@ -1,0 +1,31 @@
+android {
+    defaultConfig {
+        applicationId "ru.endroad.rosatom"
+        versionCode 1
+        versionName "1.0"
+    }
+
+    dependencies {
+        //Core
+        implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.androidxViewModel}"
+
+        //UI
+        implementation "com.google.android.material:material:${versions.material}"
+        implementation "androidx.recyclerview:recyclerview:${versions.recyclerView}"
+        implementation "androidx.constraintlayout:constraintlayout:${versions.constraintLayout}"
+
+        //Utils
+        implementation "com.google.code.gson:gson:${versions.gson}"
+        implementation "com.squareup.picasso:picasso:${versions.picasso}"
+
+        //Koin DI
+        implementation "org.koin:koin-core:${versions.koin}"
+        implementation "org.koin:koin-core-ext:${versions.koin}"
+        implementation "org.koin:koin-androidx-viewmodel:${versions.koin}"
+
+        //Coroutines
+        implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:${versions.coroutine}"
+        implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:${versions.coroutine}"
+        implementation "androidx.lifecycle:lifecycle-runtime-ktx:2.2.0"
+    }
+}
