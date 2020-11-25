@@ -4,6 +4,7 @@ import android.app.Application
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 import ru.endroad.rosatom.di.navigationModule
+import ru.endroad.rosatom.di.routerModule
 
 class App : Application() {
 
@@ -11,7 +12,7 @@ class App : Application() {
 		super.onCreate()
 		startKoin {
 			androidContext(this@App)
-			modules(navigationModule)
+			modules(navigationModule, routerModule)
 		}
 	}
 }

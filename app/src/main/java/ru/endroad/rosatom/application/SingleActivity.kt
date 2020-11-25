@@ -7,6 +7,7 @@ import org.koin.android.ext.android.inject
 import ru.endroad.component.common.BaseActivity
 import ru.endroad.component.navigation.navigator.NavigationCommandStack
 import ru.endroad.rosatom.R
+import ru.endroad.rosatom.router.RootRouter
 
 class SingleActivity : BaseActivity() {
 
@@ -14,6 +15,7 @@ class SingleActivity : BaseActivity() {
 	override val theme = R.style.ThemeRosatom
 
 	private val navigatorCommandStack: NavigationCommandStack by inject()
+	private val router: RootRouter by inject()
 
 	override fun onCreate(savedInstanceState: Bundle?) {
 		super.onCreate(savedInstanceState)
@@ -22,5 +24,9 @@ class SingleActivity : BaseActivity() {
 				requireNavigationContext(baseContext, supportFragmentManager)
 			}
 		}
+	}
+
+	override fun onFirstCreate() {
+		router.openMainNavigationScreen(R.id.tab_draft_order)
 	}
 }
