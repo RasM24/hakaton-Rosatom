@@ -5,6 +5,7 @@ import ru.endroad.component.navigation.command.Command
 import ru.endroad.component.navigation.navigator.Navigator
 import ru.endroad.rosatom.di.contentNavigatorQualifier
 import ru.endroad.rosatom.view.monitoring.MonitoringDestination
+import ru.endroad.rosatom.view.profile.ProfileDestination
 
 class MainNavigationRouter {
 
@@ -16,5 +17,7 @@ class MainNavigationRouter {
 		contentNavigator.execute(Command.ChangeRoot(MonitoringDestination))
 	}
 
-	fun openThirdScreen() = Unit
+	fun openProfile() {
+		contentNavigator.execute(Command.ChangeRoot(ProfileDestination))
+	}
 }

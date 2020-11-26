@@ -6,9 +6,10 @@ import org.koin.core.module.Module
 import org.koin.dsl.module
 import org.koin.experimental.builder.create
 import ru.endroad.rosatom.view.monitoring.MonitoringViewModel
+import ru.endroad.rosatom.view.profile.ProfileViewModel
 
 val viewModelModule = module {
-
+	viewModel<ProfileViewModel>()
 	viewModel<MonitoringViewModel>()
 }
 
