@@ -7,10 +7,14 @@ import kotlinx.coroutines.launch
 import ru.endroad.component.common.MviViewModel
 import ru.endroad.rosatom.entity.DraftOrder
 import ru.endroad.rosatom.entity.Profile
+import ru.endroad.server.voice.data.AudioRecordingDataSource
 import ru.endroad.server.voice.data.RecorderInteractor
+import ru.endroad.server.voice.data.VoiceRecognitionDataSource
 
 class DraftOrderViewModel(
 	private val recorderInteractor: RecorderInteractor,
+	private val audioRecordingDataSource: AudioRecordingDataSource,
+	private val voiceRecognitionDataSource: VoiceRecognitionDataSource,
 ) : ViewModel(), MviViewModel<DraftOrderScreenState, DraftOrderScreenEvent> {
 
 	private val sampleDraft = DraftOrder(
@@ -30,6 +34,7 @@ class DraftOrderViewModel(
 			when (event) {
 				is DraftOrderScreenEvent.StartSpeak -> reduce(event)
 				is DraftOrderScreenEvent.StopSpeak -> reduce(event)
+				is DraftOrderScreenEvent.SendAudioFile -> viewModelScope.launch { reduce(event) }
 			}
 		}
 	}
@@ -42,5 +47,14 @@ class DraftOrderViewModel(
 	private fun reduce(event: DraftOrderScreenEvent.StopSpeak) {
 		recorderInteractor.stop()
 		state.tryEmit(DraftOrderScreenState.Initialized)
+		notice(DraftOrderScreenEvent.SendAudioFile)
+	}
+
+	private suspend fun reduce(event: DraftOrderScreenEvent.SendAudioFile) {
+		val audioFile = audioRecordingDataSource.get()
+		val text = voiceRecognitionDataSource.recognize(audioFile)
+		val draft = DraftOrder(bodyText = text)
+		audioRecordingDataSource.clear()
+		state.tryEmit(DraftOrderScreenState.RecognitionData(draft))
 	}
 }
