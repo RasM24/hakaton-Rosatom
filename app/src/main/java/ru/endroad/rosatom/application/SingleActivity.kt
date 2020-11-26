@@ -1,5 +1,7 @@
 package ru.endroad.rosatom.application
 
+import android.Manifest.permission
+import android.content.pm.PackageManager
 import android.os.Bundle
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.flow.collect
@@ -24,9 +26,21 @@ class SingleActivity : BaseActivity() {
 				requireNavigationContext(baseContext, supportFragmentManager)
 			}
 		}
+
+		requestPermission()
 	}
 
 	override fun onFirstCreate() {
 		router.openMainNavigationScreen(R.id.tab_draft_order)
+	}
+
+	private fun requestPermission() {
+		val audioPermission = checkSelfPermission(permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED
+		val storageWritePermission = checkSelfPermission(permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
+		val storageReadPermission = checkSelfPermission(permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED
+
+		arrayOf(permission.RECORD_AUDIO, permission.WRITE_EXTERNAL_STORAGE, permission.READ_EXTERNAL_STORAGE)
+			.takeUnless { audioPermission && storageReadPermission && storageWritePermission }
+			?.let { requestPermissions(it, 0) }
 	}
 }
