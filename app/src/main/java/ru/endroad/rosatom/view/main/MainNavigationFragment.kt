@@ -41,7 +41,7 @@ class MainNavigationFragment : BaseFragment(), BottomNavigationView.OnNavigation
 		when (item.itemId) {
 			R.id.tab_draft_order -> router.openDraftOrder()
 			R.id.tab_monitoring  -> router.openMonitoring()
-			R.id.tab_profile     -> router.openThirdScreen()
+			R.id.tab_profile     -> router.openProfile()
 			else                 -> return false
 		}
 

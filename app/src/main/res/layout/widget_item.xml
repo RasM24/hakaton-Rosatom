@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:layout_margin="4dp"
+	app:cardCornerRadius="8dp">
+
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="@drawable/background_sensor"
+		android:padding="4dp">
+
+		<ImageView
+			android:id="@+id/widget_icon"
+			android:layout_width="0dp"
+			android:layout_height="0dp"
+			android:layout_marginBottom="4dp"
+			android:layout_marginTop="4dp"
+			app:layout_constraintBottom_toBottomOf="@id/widget_value"
+			app:layout_constraintDimensionRatio="1:1"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="@id/widget_name"
+			app:srcCompat="@drawable/ic_sensor_light"
+			app:tint="?colorPrimary" />
+
+		<TextView
+			android:id="@+id/widget_name"
+			style="@style/TextAppearance.MaterialComponents.Body2"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="8dp"
+			android:textColor="?colorPrimary"
+			app:layout_constraintStart_toEndOf="@+id/widget_icon"
+			app:layout_constraintTop_toTopOf="parent"
+			tools:text="Освещение" />
+
+		<TextView
+			android:id="@+id/widget_value"
+			style="@style/TextAppearance.MaterialComponents.Headline6"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="8dp"
+			android:textColor="?colorPrimary"
+			app:layout_constraintStart_toEndOf="@+id/widget_icon"
+			app:layout_constraintTop_toBottomOf="@id/widget_name"
+			tools:text="Значение: 75" />
+
+		<TextView
+			android:id="@+id/widget_threshold"
+			style="@style/TextAppearance.MaterialComponents.Caption"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="8dp"
+			android:layout_marginTop="8dp"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/widget_value"
+			tools:text="Критическое значение: 1400" />
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
