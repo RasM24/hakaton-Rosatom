@@ -13,4 +13,14 @@
 	<string name="sensor_measure_light">lm</string>
 	<string name="sensor_measure_temperature">°C</string>
 	<string name="sensor_measure_pressure">КПа</string>
+
+	<string name="order_executor">Исполнитель</string>
+	<string name="order_creator">Заявитель</string>
+	<string name="order_draft_date_title">Дата:</string>
+	<string name="order_draft_body_hint">Описание</string>
+	<string name="order_draft_title_hint">Заголовок</string>
+	<string name="order_draft_receiver_hint">Получатель</string>
+	<string name="order_draft_sender_hint">Отправитель</string>
+	<string name="order_draft_from">Кому:</string>
+	<string name="order_draft_to">От:</string>
 </resources>
