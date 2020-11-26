@@ -6,4 +6,5 @@ sealed class DraftOrderScreenState {
 
 	object Initialized : DraftOrderScreenState()
 	class RecognitionData(val draftOrder: DraftOrder) : DraftOrderScreenState()
+	object Recording : DraftOrderScreenState()
 }

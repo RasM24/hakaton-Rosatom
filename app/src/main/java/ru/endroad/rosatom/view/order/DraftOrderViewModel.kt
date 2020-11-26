@@ -7,8 +7,11 @@ import kotlinx.coroutines.launch
 import ru.endroad.component.common.MviViewModel
 import ru.endroad.rosatom.entity.DraftOrder
 import ru.endroad.rosatom.entity.Profile
+import ru.endroad.server.voice.data.RecorderInteractor
 
-class DraftOrderViewModel : ViewModel(), MviViewModel<DraftOrderScreenState, DraftOrderScreenEvent> {
+class DraftOrderViewModel(
+	private val recorderInteractor: RecorderInteractor,
+) : ViewModel(), MviViewModel<DraftOrderScreenState, DraftOrderScreenEvent> {
 
 	private val sampleDraft = DraftOrder(
 		orderId = 1,
@@ -25,8 +28,19 @@ class DraftOrderViewModel : ViewModel(), MviViewModel<DraftOrderScreenState, Dra
 	override fun notice(event: DraftOrderScreenEvent) {
 		viewModelScope.launch {
 			when (event) {
-				DraftOrderScreenEvent.Speak -> TODO()
+				is DraftOrderScreenEvent.StartSpeak -> reduce(event)
+				is DraftOrderScreenEvent.StopSpeak -> reduce(event)
 			}
 		}
+	}
+
+	private fun reduce(event: DraftOrderScreenEvent.StartSpeak) {
+		recorderInteractor.record()
+		state.tryEmit(DraftOrderScreenState.Recording)
+	}
+
+	private fun reduce(event: DraftOrderScreenEvent.StopSpeak) {
+		recorderInteractor.stop()
+		state.tryEmit(DraftOrderScreenState.Initialized)
 	}
 }

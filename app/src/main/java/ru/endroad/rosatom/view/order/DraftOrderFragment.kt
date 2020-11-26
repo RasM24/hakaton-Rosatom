@@ -10,14 +10,19 @@ class DraftOrderFragment : MviFragment<DraftOrderScreenState, DraftOrderScreenEv
 	override val viewModel by viewModel<DraftOrderViewModel>()
 	override val layout = R.layout.order_draft_fragment
 
+	private var record = false
+
 	override fun setupViewComponents() {
 		setToolbarText(getString(R.string.tab_navigation_order_draft))
+
+		order_draft_voice_input.setOnClickListener { viewModel.notice(DraftOrderScreenEvent.StartSpeak) }
 	}
 
 	override fun render(state: DraftOrderScreenState) {
 		when (state) {
-			DraftOrderScreenState.Initialized -> TODO()
+			is DraftOrderScreenState.Initialized -> render(state)
 			is DraftOrderScreenState.RecognitionData -> render(state)
+			is DraftOrderScreenState.Recording -> render(state)
 		}
 	}
 
@@ -29,5 +34,15 @@ class DraftOrderFragment : MviFragment<DraftOrderScreenState, DraftOrderScreenEv
 			bodyText?.let(order_draft_input_body::setText)
 			deadline?.let(order_draft_input_date::setText)
 		}
+	}
+
+	private fun render(state: DraftOrderScreenState.Initialized) {
+		order_draft_voice_input.setImageResource(R.drawable.ic_microphone)
+		order_draft_voice_input.setOnClickListener { viewModel.notice(DraftOrderScreenEvent.StartSpeak) }
+	}
+
+	private fun render(state: DraftOrderScreenState.Recording) {
+		order_draft_voice_input.setImageResource(R.drawable.ic_senser_temperature)
+		order_draft_voice_input.setOnClickListener { viewModel.notice(DraftOrderScreenEvent.StopSpeak) }
 	}
 }
