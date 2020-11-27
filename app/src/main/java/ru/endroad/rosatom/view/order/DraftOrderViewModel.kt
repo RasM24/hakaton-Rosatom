@@ -19,8 +19,8 @@ class DraftOrderViewModel(
 
 	private val sampleDraft = DraftOrder(
 		orderId = 1,
-		creator = Profile("Дволятик Олег", ""),
-		executor = Profile("Иван Петров", ""),
+		creator = Profile(1,"Дволятик Олег", ""),
+		executor = Profile(2, "Иван Петров", ""),
 		createData = 89492879139,
 		deadline = "29.11.2020",
 		titleText = "План ПХД",

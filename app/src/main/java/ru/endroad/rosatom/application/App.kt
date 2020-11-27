@@ -17,6 +17,7 @@ class App : Application() {
 				navigationModule,
 				routerModule,
 				viewModelModule,
+				domainModule,
 				dataModule,
 				voiceModule,
 				ordersModule,
