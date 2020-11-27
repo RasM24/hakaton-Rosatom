@@ -4,6 +4,7 @@ import android.app.Application
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 import ru.endroad.rosatom.di.*
+import ru.endroad.server.orders.di.ordersModule
 import ru.endroad.server.voice.di.voiceModule
 
 class App : Application() {
@@ -18,6 +19,7 @@ class App : Application() {
 				viewModelModule,
 				dataModule,
 				voiceModule,
+				ordersModule,
 			)
 		}
 	}
