@@ -1,10 +1,10 @@
-package ru.endroad.rosatom.entity
+package ru.endroad.server.orders.entity
 
 import java.io.File
 
 data class Order(
 	val id: Long,
-	val creator: Profile,
+	val creatorId: Long,
 	val performer: Performer,
 	val createData: Long,
 	val deadline: Long,
@@ -13,5 +13,5 @@ data class Order(
 	val orderType: OrderType,
 	val orderStatus: OrderStatus,
 	val bodyText: String,
-	val attachment: File?,
+	val attachment: File? = null,
 )

@@ -1,4 +1,4 @@
-package ru.endroad.rosatom.entity
+package ru.endroad.server.orders.entity
 
 sealed class OrderStatus {
 	object New : OrderStatus()

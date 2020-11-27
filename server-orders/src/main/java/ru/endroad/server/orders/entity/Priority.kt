@@ -1,4 +1,4 @@
-package ru.endroad.rosatom.entity
+package ru.endroad.server.orders.entity
 
 enum class Priority {
 	CRITICAL,
