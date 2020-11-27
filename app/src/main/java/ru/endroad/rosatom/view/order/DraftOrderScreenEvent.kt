@@ -2,5 +2,7 @@ package ru.endroad.rosatom.view.order
 
 sealed class DraftOrderScreenEvent {
 
-	object Speak : DraftOrderScreenEvent()
+	object StartSpeak : DraftOrderScreenEvent()
+	object StopSpeak : DraftOrderScreenEvent()
+	object SendAudioFile : DraftOrderScreenEvent()
 }

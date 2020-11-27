@@ -8,6 +8,7 @@ android {
     dependencies {
         implementation project(":component-navigation")
         implementation project(":component-common")
+        implementation project(":server-voice")
 
         //Core
         implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.androidxViewModel}"
