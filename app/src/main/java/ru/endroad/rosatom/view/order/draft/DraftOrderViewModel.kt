@@ -34,6 +34,7 @@ class DraftOrderViewModel(
 				is DraftOrderScreenEvent.StartSpeak    -> reduce(event)
 				is DraftOrderScreenEvent.StopSpeak     -> reduce(event)
 				is DraftOrderScreenEvent.SendAudioFile -> viewModelScope.launch { reduce(event) }
+				is DraftOrderScreenEvent.Create        -> state.tryEmit(DraftOrderScreenState.Initialized)
 			}
 		}
 	}

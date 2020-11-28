@@ -39,7 +39,7 @@ class SingleActivity : BaseActivity() {
 		if (intent.action == Intent.ACTION_VIEW) {
 			intent.data?.let(router::openDeepLink)
 		} else {
-			router.openMainNavigationScreen(R.id.tab_draft_order)
+			router.openMainNavigationScreen(R.id.tab_order_spectator)
 		}
 	}
 
