@@ -10,8 +10,6 @@ class DraftOrderFragment : MviFragment<DraftOrderScreenState, DraftOrderScreenEv
 	override val viewModel by viewModel<DraftOrderViewModel>()
 	override val layout = R.layout.order_draft_fragment
 
-	private var record = false
-
 	override fun setupViewComponents() {
 		setToolbarText(getString(R.string.tab_navigation_order_draft))
 
