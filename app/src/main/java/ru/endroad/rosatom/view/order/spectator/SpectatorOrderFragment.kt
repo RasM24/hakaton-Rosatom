@@ -14,7 +14,7 @@ class SpectatorOrderFragment : MviFragment<SpectatorOrderScreenState, SpectatorO
 	private val adapter = SpectatorOrdersAdapter()
 
 	override fun setupViewComponents() {
-		setToolbarText(getString(R.string.tab_navigation_order_draft))
+		setToolbarText(getString(R.string.tab_navigation_spectator_order))
 		order_list.adapter = adapter
 	}
 

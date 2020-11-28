@@ -13,6 +13,7 @@ class SummaryFragment : BaseFragment() {
 	private val router: SummaryRouter by inject()
 
 	override fun setupViewComponents() {
+		setToolbarText(getString(R.string.tab_navigation_calendar))
 		summary_statistic_body.setText(R.string.mock_summary_statistic_body)
 		summary_performer_body.setText(R.string.mock_summary_performer_body)
 

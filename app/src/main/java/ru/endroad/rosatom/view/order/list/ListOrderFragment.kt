@@ -16,7 +16,7 @@ class ListOrderFragment : MviFragment<ListOrderScreenState, ListOrderScreenEvent
 	)
 
 	override fun setupViewComponents() {
-		setToolbarText(getString(R.string.tab_navigation_order_draft))
+		setToolbarText(getString(R.string.tab_navigation_order_list))
 		order_list.adapter = adapter
 	}
 
