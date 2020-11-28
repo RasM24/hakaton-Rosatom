@@ -8,6 +8,7 @@ import org.koin.experimental.builder.create
 import ru.endroad.rosatom.view.monitoring.MonitoringViewModel
 import ru.endroad.rosatom.view.order.DraftOrderViewModel
 import ru.endroad.rosatom.view.order.ListOrderViewModel
+import ru.endroad.rosatom.view.order.SpectatorOrderViewModel
 import ru.endroad.rosatom.view.profile.ProfileViewModel
 
 val viewModelModule = module {
@@ -15,6 +16,7 @@ val viewModelModule = module {
 	viewModel<MonitoringViewModel>()
 	viewModel<DraftOrderViewModel>()
 	viewModel<ListOrderViewModel>()
+	viewModel<SpectatorOrderViewModel>()
 }
 
 private inline fun <reified T : Any> Module.viewModel(): BeanDefinition<T> {
