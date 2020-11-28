@@ -2,19 +2,41 @@ package ru.endroad.server.orders.data
 
 import ru.endroad.server.orders.OrderApi
 import ru.endroad.server.orders.entity.*
+import ru.endroad.server.orders.model.OrderModel
 
 class OrderListDataSource(
 	private val orderApi: OrderApi,
 ) {
 
-	private val hardcode = listOf(
-		Order(1, 1, Performer.All, 0, 0, "title", Priority.CRITICAL, OrderType.COMMON, OrderStatus.InProgress, ""),
-		Order(1, 1, Performer.All, 0, 0, "title", Priority.HIGH, OrderType.COMMON, OrderStatus.Read, ""),
-		Order(1, 1, Performer.All, 0, 0, "title", Priority.LOW, OrderType.TECHNOLOGICAL, OrderStatus.InProgress, ""),
-		Order(1, 1, Performer.All, 0, 0, "title", Priority.HIGH, OrderType.COMMON, OrderStatus.New, ""),
-		Order(1, 1, Performer.All, 0, 0, "title", Priority.MEDIUM, OrderType.TECHNICAL, OrderStatus.InProgress, ""),
-	)
-
 	suspend fun getList(employerId: Long): List<Order> =
-		hardcode
+		orderApi.getOrders().map(::convert)
+
+	private fun convert(model: OrderModel): Order =
+		Order(
+			id = model.id,
+			creatorId = model.creatorId,
+			performer = model.getPerformer,
+			createData = model.createData,
+			deadline = model.deadline,
+			titleText = model.titleText,
+			priority = model.getPriority,
+			orderType = model.getOrderType,
+			orderStatus = model.getOrderStatus,
+			bodyText = model.bodyText,
+			attachment = null,
+		)
+
+	private val OrderModel.getOrderType: OrderType
+		get() = OrderType.valueOf(orderType)
+
+	//TODO
+	private val OrderModel.getOrderStatus: OrderStatus
+		get() = OrderStatus.New
+
+	//TODO
+	private val OrderModel.getPerformer: Performer
+		get() = Performer.All
+
+	private val OrderModel.getPriority: Priority
+		get() = Priority.valueOf(priority)
 }
