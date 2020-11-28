@@ -7,6 +7,7 @@ import kotlinx.coroutines.launch
 import ru.endroad.component.common.MviViewModel
 import ru.endroad.rosatom.domain.GetOpenOrders
 import ru.endroad.rosatom.router.OrderRouter
+import ru.endroad.server.orders.entity.Priority
 
 class ListOrderViewModel(
 	private val getOpenOrders: GetOpenOrders,
@@ -28,6 +29,8 @@ class ListOrderViewModel(
 
 	private suspend fun reduce(event: ListOrderScreenEvent.Load) {
 		val orderList = getOpenOrders()
+			.sortedByDescending { it.priority == Priority.CRITICAL }
+
 		state.tryEmit(ListOrderScreenState.ShowData(orderList))
 	}
 }
