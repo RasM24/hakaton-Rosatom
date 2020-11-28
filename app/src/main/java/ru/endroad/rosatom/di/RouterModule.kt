@@ -9,4 +9,5 @@ val routerModule = module {
 	single<MainNavigationRouter>()
 	single<SummaryRouter>()
 	single<PushRouting>()
+	single<OrderRouter>()
 }

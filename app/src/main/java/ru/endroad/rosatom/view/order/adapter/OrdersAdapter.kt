@@ -4,7 +4,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import ru.endroad.server.orders.entity.Order
 
-class OrdersAdapter : RecyclerView.Adapter<OrderViewHolder>() {
+class OrdersAdapter(
+	private val onOrderClick: (Order) -> Unit,
+) : RecyclerView.Adapter<OrderViewHolder>() {
 
 	private companion object {
 
@@ -18,7 +20,7 @@ class OrdersAdapter : RecyclerView.Adapter<OrderViewHolder>() {
 		}
 
 	override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): OrderViewHolder =
-		OrderViewHolder(parent)
+		OrderViewHolder(parent, onOrderClick)
 
 	override fun onBindViewHolder(holder: OrderViewHolder, position: Int) {
 		holder.bind(items[position])

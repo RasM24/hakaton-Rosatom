@@ -8,9 +8,11 @@ import ru.endroad.component.common.inflate
 import ru.endroad.rosatom.R
 import ru.endroad.server.orders.entity.Order
 
-class OrderViewHolder(parent: ViewGroup) : RecyclerView.ViewHolder(parent.inflate(R.layout.item_order_for_execution)) {
+class OrderViewHolder(parent: ViewGroup, private val onOrderClick: (Order) -> Unit) :
+	RecyclerView.ViewHolder(parent.inflate(R.layout.item_order_for_execution)) {
 
 	fun bind(item: Order) {
+		itemView.setOnClickListener { onOrderClick(item) }
 		itemView.bind(item)
 	}
 

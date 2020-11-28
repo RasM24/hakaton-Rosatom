@@ -11,7 +11,9 @@ class ListOrderFragment : MviFragment<ListOrderScreenState, ListOrderScreenEvent
 	override val viewModel by viewModel<ListOrderViewModel>()
 	override val layout = R.layout.order_list_fragment
 
-	private val adapter = OrdersAdapter()
+	private val adapter = OrdersAdapter(
+		onOrderClick = { id -> viewModel.notice(ListOrderScreenEvent.OrderClick(id.id)) }
+	)
 
 	override fun setupViewComponents() {
 		setToolbarText(getString(R.string.tab_navigation_order_draft))
