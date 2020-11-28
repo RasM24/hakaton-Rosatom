@@ -1,18 +1,148 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/fragment_root"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent">
 
-	<TextView
-		android:id="@+id/textView"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:layout_marginStart="16dp"
-		android:layout_marginTop="32dp"
-		android:text="Детали"
-		android:textAppearance="@style/TextAppearance.MaterialComponents.Headline3"
-		android:textColor="?colorPrimary"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+	<androidx.constraintlayout.widget.ConstraintLayout
+		android:id="@+id/constraintLayout"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:paddingEnd="16dp"
+		android:paddingStart="16dp">
+
+		<TextView
+			android:id="@+id/order_draft_to"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="32dp"
+			android:text="@string/order_draft_to"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toTopOf="parent" />
+
+		<TextView
+			android:id="@+id/order_draft_from"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="24dp"
+			android:text="@string/order_draft_from"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@id/order_draft_to" />
+
+		<EditText
+			android:id="@+id/order_draft_input_to"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="8dp"
+			android:hint="@string/order_draft_sender_hint"
+			android:inputType="text"
+			android:padding="8dp"
+			app:layout_constraintBaseline_toBaselineOf="@+id/order_draft_to"
+			app:layout_constraintStart_toEndOf="@+id/order_draft_to" />
+
+		<EditText
+			android:id="@+id/order_draft_input_from"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="8dp"
+			android:hint="@string/order_draft_receiver_hint"
+			android:inputType="text"
+			android:padding="8dp"
+			app:layout_constraintBaseline_toBaselineOf="@+id/order_draft_from"
+			app:layout_constraintStart_toEndOf="@+id/order_draft_from" />
+
+		<com.google.android.material.textfield.TextInputLayout
+			android:id="@+id/layout_input_title"
+			style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="24dp"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/order_draft_from">
+
+			<com.google.android.material.textfield.TextInputEditText
+				android:id="@+id/order_draft_input_title"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:hint="@string/order_draft_title_hint"
+				android:singleLine="false" />
+
+		</com.google.android.material.textfield.TextInputLayout>
+
+		<com.google.android.material.textfield.TextInputLayout
+			android:id="@+id/layout_input_body"
+			style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+			android:layout_width="match_parent"
+			android:layout_height="0dp"
+			android:layout_marginTop="8dp"
+			app:layout_constraintEnd_toEndOf="parent"
+			app:layout_constraintHeight_percent=".45"
+			app:layout_constraintStart_toStartOf="parent"
+			app:layout_constraintTop_toBottomOf="@+id/layout_input_title">
+
+			<com.google.android.material.textfield.TextInputEditText
+				android:id="@+id/order_draft_input_body"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:gravity="top"
+				android:hint="@string/order_draft_body_hint"
+				android:singleLine="false" />
+
+		</com.google.android.material.textfield.TextInputLayout>
+
+		<TextView
+			android:id="@+id/order_draft_date"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="32dp"
+			android:layout_marginStart="8dp"
+			android:text="@string/order_draft_date_title"
+			app:layout_constraintBaseline_toBaselineOf="@id/order_draft_input_date"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintStart_toStartOf="parent" />
+
+		<EditText
+			android:id="@+id/order_draft_input_date"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="8dp"
+			android:layout_marginTop="8dp"
+			android:drawablePadding="4dp"
+			android:inputType="date"
+			android:padding="8dp"
+			tools:text="21.04.2020"
+			android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+			app:drawableStartCompat="@drawable/ic_date_range"
+			app:layout_constraintStart_toEndOf="@+id/order_draft_date"
+			app:layout_constraintTop_toBottomOf="@id/layout_input_body" />
+
+		<ImageButton
+			android:id="@+id/order_draft_attach_button"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="24dp"
+			android:background="?android:attr/selectableItemBackground"
+			android:padding="8dp"
+			android:src="@drawable/ic_attach"
+			app:layout_constraintBottom_toBottomOf="@+id/order_draft_input_date"
+			app:layout_constraintStart_toEndOf="@+id/order_draft_input_date"
+			app:layout_constraintTop_toTopOf="@+id/order_draft_input_date" />
+
+		<ImageButton
+			android:id="@+id/order_draft_comment_button"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="8dp"
+			android:background="?android:attr/selectableItemBackground"
+			android:padding="8dp"
+			android:src="@drawable/ic_comment"
+			app:layout_constraintBottom_toBottomOf="@+id/order_draft_input_date"
+			app:layout_constraintStart_toEndOf="@+id/order_draft_attach_button"
+			app:layout_constraintTop_toTopOf="@+id/order_draft_input_date" />
+
+	</androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

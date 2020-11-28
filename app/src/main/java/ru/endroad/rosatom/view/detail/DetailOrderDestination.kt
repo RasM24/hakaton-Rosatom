@@ -3,8 +3,8 @@ package ru.endroad.rosatom.view.detail
 import androidx.fragment.app.Fragment
 import ru.endroad.component.navigation.destination.FragmentDestination
 
-object DetailOrderDestination : FragmentDestination {
+class DetailOrderDestination(private val orderId: Long) : FragmentDestination {
 
 	override fun createFragment(): Fragment =
-		DetailOrderFragment()
+		DetailOrderFragment.createFragment(orderId)
 }

@@ -18,7 +18,7 @@ class RootRouter {
 
 	fun openDeepLink(deeplink: Uri) {
 		when (deeplink.path) {
-			"/detail" -> rootNavigator.execute(Command.Open(DetailOrderDestination))
+			"/detail" -> rootNavigator.execute(Command.Open(DetailOrderDestination(-1)))
 		}
 	}
 }
