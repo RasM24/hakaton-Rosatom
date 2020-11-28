@@ -2,6 +2,7 @@ package ru.endroad.rosatom.view.monitoring
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 import ru.endroad.component.common.MviViewModel
@@ -14,7 +15,12 @@ class MonitoringViewModel(
 	override val state = MutableStateFlow<MonitoringScreenState>(MonitoringScreenState.Initialized)
 
 	init {
-		notice(MonitoringScreenEvent.FetchData)
+		viewModelScope.launch {
+			while (true) {
+				delay(1000)
+				notice(MonitoringScreenEvent.FetchData)
+			}
+		}
 	}
 
 	override fun notice(event: MonitoringScreenEvent) {
