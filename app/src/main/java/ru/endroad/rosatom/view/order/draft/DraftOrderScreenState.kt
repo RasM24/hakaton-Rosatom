@@ -1,4 +1,4 @@
-package ru.endroad.rosatom.view.order
+package ru.endroad.rosatom.view.order.draft
 
 import ru.endroad.rosatom.entity.DraftOrder
 

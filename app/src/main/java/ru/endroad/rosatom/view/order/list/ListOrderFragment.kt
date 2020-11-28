@@ -1,4 +1,4 @@
-package ru.endroad.rosatom.view.order
+package ru.endroad.rosatom.view.order.list
 
 import kotlinx.android.synthetic.main.order_list_fragment.*
 import org.koin.androidx.viewmodel.ext.android.viewModel

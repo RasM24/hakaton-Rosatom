@@ -8,9 +8,9 @@ import org.koin.dsl.module
 import org.koin.experimental.builder.create
 import ru.endroad.rosatom.view.detail.DetailOrderViewModel
 import ru.endroad.rosatom.view.monitoring.MonitoringViewModel
-import ru.endroad.rosatom.view.order.DraftOrderViewModel
-import ru.endroad.rosatom.view.order.ListOrderViewModel
-import ru.endroad.rosatom.view.order.SpectatorOrderViewModel
+import ru.endroad.rosatom.view.order.draft.DraftOrderViewModel
+import ru.endroad.rosatom.view.order.list.ListOrderViewModel
+import ru.endroad.rosatom.view.order.spectator.SpectatorOrderViewModel
 import ru.endroad.rosatom.view.profile.ProfileViewModel
 
 val viewModelModule = module {

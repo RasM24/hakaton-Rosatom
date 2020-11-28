@@ -7,8 +7,6 @@ import org.koin.core.parameter.parametersOf
 import ru.endroad.component.common.MviFragment
 import ru.endroad.component.common.withArguments
 import ru.endroad.rosatom.R
-import ru.endroad.rosatom.view.main.MainNavigationFragment
-import ru.endroad.rosatom.view.order.DraftOrderScreenEvent
 
 class DetailOrderFragment : MviFragment<DetailOrderScreenState, DetailOrderScreenEvent>() {
 

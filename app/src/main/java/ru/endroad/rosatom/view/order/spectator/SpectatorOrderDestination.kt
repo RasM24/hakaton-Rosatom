@@ -1,4 +1,4 @@
-package ru.endroad.rosatom.view.order
+package ru.endroad.rosatom.view.order.spectator
 
 import androidx.fragment.app.Fragment
 import ru.endroad.component.navigation.destination.FragmentDestination

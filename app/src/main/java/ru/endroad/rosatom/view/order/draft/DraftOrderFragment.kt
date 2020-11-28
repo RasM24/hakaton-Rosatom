@@ -1,4 +1,4 @@
-package ru.endroad.rosatom.view.order
+package ru.endroad.rosatom.view.order.draft
 
 import kotlinx.android.synthetic.main.order_draft_fragment.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -18,9 +18,9 @@ class DraftOrderFragment : MviFragment<DraftOrderScreenState, DraftOrderScreenEv
 
 	override fun render(state: DraftOrderScreenState) {
 		when (state) {
-			is DraftOrderScreenState.Initialized -> render(state)
+			is DraftOrderScreenState.Initialized     -> render(state)
 			is DraftOrderScreenState.RecognitionData -> render(state)
-			is DraftOrderScreenState.Recording -> render(state)
+			is DraftOrderScreenState.Recording       -> render(state)
 		}
 	}
 

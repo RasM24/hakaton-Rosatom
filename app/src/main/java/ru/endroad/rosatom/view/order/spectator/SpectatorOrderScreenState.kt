@@ -1,4 +1,4 @@
-package ru.endroad.rosatom.view.order
+package ru.endroad.rosatom.view.order.spectator
 
 import ru.endroad.server.orders.entity.Order
 

@@ -1,4 +1,4 @@
-package ru.endroad.rosatom.view.order
+package ru.endroad.rosatom.view.order.draft
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -31,8 +31,8 @@ class DraftOrderViewModel(
 	override fun notice(event: DraftOrderScreenEvent) {
 		viewModelScope.launch {
 			when (event) {
-				is DraftOrderScreenEvent.StartSpeak -> reduce(event)
-				is DraftOrderScreenEvent.StopSpeak -> reduce(event)
+				is DraftOrderScreenEvent.StartSpeak    -> reduce(event)
+				is DraftOrderScreenEvent.StopSpeak     -> reduce(event)
 				is DraftOrderScreenEvent.SendAudioFile -> viewModelScope.launch { reduce(event) }
 			}
 		}

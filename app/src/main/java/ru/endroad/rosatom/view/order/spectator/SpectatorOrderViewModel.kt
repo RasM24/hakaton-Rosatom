@@ -1,4 +1,4 @@
-package ru.endroad.rosatom.view.order
+package ru.endroad.rosatom.view.order.spectator
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
