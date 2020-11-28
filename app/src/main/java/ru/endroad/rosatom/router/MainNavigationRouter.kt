@@ -8,7 +8,7 @@ import ru.endroad.rosatom.view.monitoring.MonitoringDestination
 import ru.endroad.rosatom.view.order.DraftOrderDestination
 import ru.endroad.rosatom.view.order.ListOrderDestination
 import ru.endroad.rosatom.view.order.SpectatorOrderDestination
-import ru.endroad.rosatom.view.profile.ProfileDestination
+import ru.endroad.rosatom.view.summary.SummaryDestination
 
 class MainNavigationRouter {
 
@@ -31,6 +31,6 @@ class MainNavigationRouter {
 	}
 
 	fun openSummary() {
-		TODO("Not yet implemented")
+		contentNavigator.execute(Command.ChangeRoot(SummaryDestination))
 	}
 }
