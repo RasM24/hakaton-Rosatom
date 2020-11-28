@@ -4,6 +4,7 @@
 	<string name="tab_navigation_profile">Профиль</string>
 	<string name="tab_navigation_monitoring">Мониторинг</string>
 	<string name="tab_navigation_order_draft">Указ</string>
+	<string name="tab_navigation_order_list">К исполнению</string>
 
 	<string name="sensor_name_oxygen">CO2</string>
 	<string name="sensor_name_light">Освещенность</string>

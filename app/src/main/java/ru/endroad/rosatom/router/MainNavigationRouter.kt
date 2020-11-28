@@ -6,6 +6,7 @@ import ru.endroad.component.navigation.navigator.Navigator
 import ru.endroad.rosatom.di.contentNavigatorQualifier
 import ru.endroad.rosatom.view.monitoring.MonitoringDestination
 import ru.endroad.rosatom.view.order.DraftOrderDestination
+import ru.endroad.rosatom.view.order.ListOrderDestination
 import ru.endroad.rosatom.view.profile.ProfileDestination
 
 class MainNavigationRouter {
@@ -22,5 +23,9 @@ class MainNavigationRouter {
 
 	fun openProfile() {
 		contentNavigator.execute(Command.ChangeRoot(ProfileDestination))
+	}
+
+	fun openListOrder() {
+		contentNavigator.execute(Command.ChangeRoot(ListOrderDestination))
 	}
 }

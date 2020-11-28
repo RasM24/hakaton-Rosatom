@@ -42,6 +42,7 @@ class MainNavigationFragment : BaseFragment(), BottomNavigationView.OnNavigation
 			R.id.tab_draft_order -> router.openDraftOrder()
 			R.id.tab_monitoring  -> router.openMonitoring()
 			R.id.tab_profile     -> router.openProfile()
+			R.id.tab_list_order  -> router.openListOrder()
 			else                 -> return false
 		}
 

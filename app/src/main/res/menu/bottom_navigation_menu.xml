@@ -7,6 +7,11 @@
 		android:title="@string/tab_navigation_order_draft" />
 
 	<item
+		android:id="@+id/tab_list_order"
+		android:icon="@drawable/ic_done_all"
+		android:title="@string/tab_navigation_order_list" />
+
+	<item
 		android:id="@+id/tab_monitoring"
 		android:icon="@drawable/ic_monitoring"
 		android:title="@string/tab_navigation_monitoring" />
