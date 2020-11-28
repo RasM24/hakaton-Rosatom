@@ -24,4 +24,6 @@
 	<string name="order_draft_sender_hint">Отправитель</string>
 	<string name="order_draft_from">Кому:</string>
 	<string name="order_draft_to">От:</string>
+	<string name="tab_navigation_spectator_order">Наблюдаемые</string>
+	<string name="tab_navigation_calendar">Статистика</string>
 </resources>
