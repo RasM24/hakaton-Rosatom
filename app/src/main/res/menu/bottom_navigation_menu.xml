@@ -2,17 +2,27 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
 	<item
-		android:id="@+id/tab_draft_order"
-		android:icon="@drawable/ic_draft_order"
-		android:title="@string/tab_navigation_order_draft" />
-
-	<item
 		android:id="@+id/tab_monitoring"
 		android:icon="@drawable/ic_monitoring"
 		android:title="@string/tab_navigation_monitoring" />
+	<item
+		android:id="@+id/tab_list_order"
+		android:icon="@drawable/ic_done_all"
+		android:title="@string/tab_navigation_order_list" />
 
 	<item
-		android:id="@+id/tab_profile"
-		android:icon="@drawable/ic_account_circle"
-		android:title="@string/tab_navigation_profile" />
+		android:id="@+id/tab_draft_order"
+		android:icon="@drawable/ic_add_order"
+		android:title="@string/tab_navigation_order_draft" />
+
+	<item
+		android:id="@+id/tab_order_spectator"
+		android:icon="@drawable/ic_pending_actions"
+		android:title="@string/tab_navigation_spectator_order" />
+
+	<item
+		android:id="@+id/tab_summary"
+		android:icon="@drawable/ic_summary"
+		android:title="@string/tab_navigation_calendar" />
+
 </menu>

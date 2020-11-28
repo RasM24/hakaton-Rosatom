@@ -39,10 +39,12 @@ class MainNavigationFragment : BaseFragment(), BottomNavigationView.OnNavigation
 
 	override fun onNavigationItemSelected(item: MenuItem): Boolean {
 		when (item.itemId) {
-			R.id.tab_draft_order -> router.openDraftOrder()
-			R.id.tab_monitoring  -> router.openMonitoring()
-			R.id.tab_profile     -> router.openProfile()
-			else                 -> return false
+			R.id.tab_monitoring      -> router.openMonitoring()
+			R.id.tab_list_order      -> router.openListOrder()
+			R.id.tab_draft_order     -> router.openDraftOrder()
+			R.id.tab_order_spectator -> router.openProfile()
+			R.id.tab_summary         -> router.openSummary()
+			else                     -> return false
 		}
 
 		return true

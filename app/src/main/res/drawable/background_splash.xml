@@ -5,7 +5,7 @@
 	<item android:drawable="?colorOnPrimary" />
 
 	<item
-		android:drawable="@mipmap/ic_rosatom"
+		android:drawable="@drawable/logo_square"
 		android:gravity="center" />
 
 </layer-list>

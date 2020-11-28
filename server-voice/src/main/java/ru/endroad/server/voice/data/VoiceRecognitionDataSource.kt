@@ -8,8 +8,8 @@ import java.io.File
 class VoiceRecognitionDataSource(private val api: VoiceApi) {
 
 	suspend fun recognize(file: File): String {
-		val requestBody: RequestBody = RequestBody.create(MediaType.parse("audio/*"), file)
+		val requestBody: RequestBody = RequestBody.create(MediaType.parse("audio/wav"), file)
 
-		return api.recognizeAudio(requestBody).text_from_audio
+		return api.recognizeAudio(requestBody).text
 	}
 }

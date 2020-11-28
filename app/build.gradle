@@ -9,6 +9,7 @@ android {
         implementation project(":component-navigation")
         implementation project(":component-common")
         implementation project(":server-voice")
+        implementation project(":server-orders")
 
         //Core
         implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:${versions.androidxViewModel}"

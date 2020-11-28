@@ -1,4 +1,4 @@
-package ru.endroad.rosatom.view.order
+package ru.endroad.rosatom.view.order.draft
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -19,12 +19,11 @@ class DraftOrderViewModel(
 
 	private val sampleDraft = DraftOrder(
 		orderId = 1,
-		creator = Profile("Дволятик Олег", ""),
-		executor = Profile("Иван Петров", ""),
+		creator = Profile(1,"Дволятик Олег", ""),
+		executor = Profile(2, "Иван Петров", ""),
 		createData = 89492879139,
 		deadline = "29.11.2020",
 		titleText = "План ПХД",
-		bodyText = "Составить презентацию о планировании хозяйственной деятельности отдела Петрова на 2021год",
 	)
 
 	override val state = MutableStateFlow<DraftOrderScreenState>(DraftOrderScreenState.RecognitionData(sampleDraft))
@@ -32,9 +31,10 @@ class DraftOrderViewModel(
 	override fun notice(event: DraftOrderScreenEvent) {
 		viewModelScope.launch {
 			when (event) {
-				is DraftOrderScreenEvent.StartSpeak -> reduce(event)
-				is DraftOrderScreenEvent.StopSpeak -> reduce(event)
+				is DraftOrderScreenEvent.StartSpeak    -> reduce(event)
+				is DraftOrderScreenEvent.StopSpeak     -> reduce(event)
 				is DraftOrderScreenEvent.SendAudioFile -> viewModelScope.launch { reduce(event) }
+				is DraftOrderScreenEvent.Create        -> state.tryEmit(DraftOrderScreenState.Initialized)
 			}
 		}
 	}

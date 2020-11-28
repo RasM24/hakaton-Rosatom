@@ -3,7 +3,11 @@
 
 	<string name="tab_navigation_profile">Профиль</string>
 	<string name="tab_navigation_monitoring">Мониторинг</string>
-	<string name="tab_navigation_order_draft">Указ</string>
+	<string name="tab_navigation_order_draft">Указание</string>
+	<string name="tab_navigation_order_list">К исполнению</string>
+	<string name="tab_navigation_order_detail">Заявка</string>
+	<string name="tab_navigation_spectator_order">Наблюдаемые</string>
+	<string name="tab_navigation_calendar">Статистика</string>
 
 	<string name="sensor_name_oxygen">CO2</string>
 	<string name="sensor_name_light">Освещенность</string>
@@ -23,4 +27,11 @@
 	<string name="order_draft_sender_hint">Отправитель</string>
 	<string name="order_draft_from">Кому:</string>
 	<string name="order_draft_to">От:</string>
+
+	<string name="summary_common_statistic_title">Статистика:</string>
+	<string name="summary_export_title">Экспорт:</string>
+	<string name="summary_performer_title">Сотрудники:</string>
+	<string name="summary_share">Поделиться</string>
+	<string name="summary_mail">Отправить по почте</string>
+	<string name="summary_export">Создать Excel-отчет</string>
 </resources>

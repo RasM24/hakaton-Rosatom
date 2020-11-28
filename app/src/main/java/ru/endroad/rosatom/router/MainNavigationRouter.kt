@@ -5,8 +5,10 @@ import ru.endroad.component.navigation.command.Command
 import ru.endroad.component.navigation.navigator.Navigator
 import ru.endroad.rosatom.di.contentNavigatorQualifier
 import ru.endroad.rosatom.view.monitoring.MonitoringDestination
-import ru.endroad.rosatom.view.order.DraftOrderDestination
-import ru.endroad.rosatom.view.profile.ProfileDestination
+import ru.endroad.rosatom.view.order.draft.DraftOrderDestination
+import ru.endroad.rosatom.view.order.list.ListOrderDestination
+import ru.endroad.rosatom.view.order.spectator.SpectatorOrderDestination
+import ru.endroad.rosatom.view.summary.SummaryDestination
 
 class MainNavigationRouter {
 
@@ -21,6 +23,14 @@ class MainNavigationRouter {
 	}
 
 	fun openProfile() {
-		contentNavigator.execute(Command.ChangeRoot(ProfileDestination))
+		contentNavigator.execute(Command.ChangeRoot(SpectatorOrderDestination))
+	}
+
+	fun openListOrder() {
+		contentNavigator.execute(Command.ChangeRoot(ListOrderDestination))
+	}
+
+	fun openSummary() {
+		contentNavigator.execute(Command.ChangeRoot(SummaryDestination))
 	}
 }

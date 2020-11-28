@@ -1,4 +1,5 @@
 include ':app'
 include ':component-common'
 include ':component-navigation'
+include ':server-orders'
 include ':server-voice'

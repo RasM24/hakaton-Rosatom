@@ -1,6 +1,7 @@
 package ru.endroad.rosatom.application
 
 import android.Manifest.permission
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import androidx.lifecycle.lifecycleScope
@@ -30,8 +31,16 @@ class SingleActivity : BaseActivity() {
 		requestPermission()
 	}
 
+	private fun processIntent(intent: Intent) {
+
+	}
+
 	override fun onFirstCreate() {
-		router.openMainNavigationScreen(R.id.tab_draft_order)
+		if (intent.action == Intent.ACTION_VIEW) {
+			intent.data?.let(router::openDeepLink)
+		} else {
+			router.openMainNavigationScreen(R.id.tab_order_spectator)
+		}
 	}
 
 	private fun requestPermission() {
