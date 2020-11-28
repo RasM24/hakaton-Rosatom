@@ -4,20 +4,16 @@
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="wrap_content"
-	android:layout_margin="4dp"
+	android:layout_margin="8dp"
 	app:cardCornerRadius="8dp"
-	app:contentPadding="4dp">
+	app:contentPaddingBottom="16dp"
+	app:contentPaddingLeft="8dp"
+	app:contentPaddingRight="8dp"
+	app:contentPaddingTop="16dp">
 
 	<androidx.constraintlayout.widget.ConstraintLayout
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content">
-
-		<CheckBox
-			android:id="@+id/order_complete_button"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			app:layout_constraintEnd_toEndOf="parent"
-			app:layout_constraintTop_toTopOf="parent" />
 
 		<ImageView
 			android:id="@+id/profile_avatar"
@@ -29,14 +25,31 @@
 			app:layout_constraintStart_toStartOf="parent"
 			app:layout_constraintTop_toTopOf="parent" />
 
+		<ImageView
+			android:id="@+id/order_priority"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="16dp"
+			app:layout_constraintBottom_toBottomOf="parent"
+			app:layout_constraintStart_toEndOf="@+id/profile_avatar"
+			app:layout_constraintTop_toTopOf="parent"
+			app:srcCompat="@drawable/ic_priority" />
+
 		<TextView
 			android:id="@+id/order_title"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:layout_marginStart="16dp"
-			tools:text="ПДН"
+			android:layout_marginStart="8dp"
 			app:layout_constraintBottom_toBottomOf="parent"
-			app:layout_constraintStart_toEndOf="@+id/profile_avatar"
+			app:layout_constraintStart_toEndOf="@+id/order_priority"
+			app:layout_constraintTop_toTopOf="parent"
+			tools:text="ПДН" />
+
+		<CheckBox
+			android:id="@+id/order_complete_button"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			app:layout_constraintEnd_toEndOf="parent"
 			app:layout_constraintTop_toTopOf="parent" />
 	</androidx.constraintlayout.widget.ConstraintLayout>
 
