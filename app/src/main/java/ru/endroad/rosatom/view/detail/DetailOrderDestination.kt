@@ -6,5 +6,5 @@ import ru.endroad.component.navigation.destination.FragmentDestination
 object DetailOrderDestination : FragmentDestination {
 
 	override fun createFragment(): Fragment =
-		TODO()
+		DetailOrderFragment()
 }

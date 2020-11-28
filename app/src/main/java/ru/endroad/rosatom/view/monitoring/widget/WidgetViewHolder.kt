@@ -37,7 +37,7 @@ class WidgetViewHolder(parent: ViewGroup) : RecyclerView.ViewHolder(parent.infla
 	private fun TextView.setSensorValue(sensorData: SensorData) {
 		val value = sensorData.value
 		val measure = resources.getString(sensorData.type.measureRes)
-		text = "$value $measure"
+		text = String.format("%.1f %s", value, measure)
 	}
 
 	private val SensorData.thresholdText: String?

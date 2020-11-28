@@ -7,17 +7,17 @@ import kotlin.random.Random
 class SensorsDataSource {
 
 	private val mockSensorTemperature1
-		get() = SensorData(rand(40.0, 65.0), null, 60f, Sensor.TEMPERATURE)
+		get() = SensorData(rand(40.0, 59.0), null, 60f, Sensor.TEMPERATURE)
 	private val mockSensorTemperature2
-		get() = SensorData(rand(20.0, 60.0), 20f, 60f, Sensor.TEMPERATURE)
+		get() = SensorData(rand(21.0, 59.0), 20f, 60f, Sensor.TEMPERATURE)
 	private val mockSensorPressure1
-		get() = SensorData(rand(80.0, 140.0), 80f, 140f, Sensor.PRESSURE)
+		get() = SensorData(rand(81.0, 145.0), 80f, 140f, Sensor.PRESSURE)
 	private val mockSensorPressure2
-		get() = SensorData(rand(800.0, 1183.0), 800f, null, Sensor.PRESSURE)
+		get() = SensorData(rand(801.0, 1183.0), 800f, null, Sensor.PRESSURE)
 	private val mockSensorLight
-		get() = SensorData(rand(300.0, 453.0), 300f, null, Sensor.LIGHT)
+		get() = SensorData(rand(301.0, 453.0), 300f, null, Sensor.LIGHT)
 	private val mockSensorOxygen
-		get() = SensorData(rand(1000.0, 2200.0), null, 1800f, Sensor.OXYGEN)
+		get() = SensorData(rand(1000.0, 1799.0), null, 1800f, Sensor.OXYGEN)
 
 	private val random = Random(1451)
 	private fun rand(from: Double, to: Double): Float =

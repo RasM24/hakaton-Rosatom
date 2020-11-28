@@ -29,17 +29,18 @@ class SingleActivity : BaseActivity() {
 		}
 
 		requestPermission()
-		intent.let(::processIntent)
 	}
 
 	private fun processIntent(intent: Intent) {
-		if (intent.action == Intent.ACTION_VIEW) {
-			intent.data?.let(router::openDeepLink)
-		}
+
 	}
 
 	override fun onFirstCreate() {
-		router.openMainNavigationScreen(R.id.tab_draft_order)
+		if (intent.action == Intent.ACTION_VIEW) {
+			intent.data?.let(router::openDeepLink)
+		} else {
+			router.openMainNavigationScreen(R.id.tab_draft_order)
+		}
 	}
 
 	private fun requestPermission() {
