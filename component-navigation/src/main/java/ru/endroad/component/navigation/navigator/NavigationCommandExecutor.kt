@@ -1,6 +1,7 @@
 package ru.endroad.component.navigation.navigator
 
 import android.content.Context
+import android.content.Intent
 import androidx.fragment.app.FragmentManager
 import ru.endroad.component.navigation.command.Command
 import ru.endroad.component.navigation.destination.Destination
@@ -21,7 +22,7 @@ class NavigationCommandExecutor {
 	private fun open(destination: Destination, context: Context, fragmentManager: FragmentManager, container: Int) {
 		when (destination) {
 			is FragmentDestination -> fragmentManager.forwardTo(destination.createFragment(), defaultForwardAnimation, container)
-			is SystemDestination -> context.startActivity(destination.createIntent())
+			is SystemDestination -> context.startActivity(destination.createIntent().apply { addFlags(Intent.FLAG_ACTIVITY_NEW_TASK) })
 		}
 	}
 
