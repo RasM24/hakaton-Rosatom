@@ -24,7 +24,6 @@ class DraftOrderViewModel(
 		createData = 89492879139,
 		deadline = "29.11.2020",
 		titleText = "План ПХД",
-		bodyText = "Составить презентацию о планировании хозяйственной деятельности отдела Петрова на 2021год",
 	)
 
 	override val state = MutableStateFlow<DraftOrderScreenState>(DraftOrderScreenState.RecognitionData(sampleDraft))
