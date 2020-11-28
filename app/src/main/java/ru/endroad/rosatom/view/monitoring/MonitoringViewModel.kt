@@ -46,7 +46,7 @@ class MonitoringViewModel(
 				.let(::requireNotNull)
 				.let { "Критическое значение датчика ${it.type}: ${it.value}" }
 
-			router.sendNotification("Внимание!", message, "")
+			router.sendNotification("Внимание!", message, "https://endroad.link/detail")
 			alertSent = true
 		}
 

@@ -1,6 +1,7 @@
 package ru.endroad.rosatom.application
 
 import android.Manifest.permission
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
 import androidx.lifecycle.lifecycleScope
@@ -28,6 +29,13 @@ class SingleActivity : BaseActivity() {
 		}
 
 		requestPermission()
+		intent.let(::processIntent)
+	}
+
+	private fun processIntent(intent: Intent) {
+		if (intent.action == Intent.ACTION_VIEW) {
+			intent.data?.let(router::openDeepLink)
+		}
 	}
 
 	override fun onFirstCreate() {
