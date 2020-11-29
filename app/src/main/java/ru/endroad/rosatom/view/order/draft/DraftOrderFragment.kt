@@ -27,6 +27,7 @@ class DraftOrderFragment : MviFragment<DraftOrderScreenState, DraftOrderScreenEv
 			is DraftOrderScreenState.Initialized -> render(state)
 			is DraftOrderScreenState.RecognitionData -> render(state)
 			is DraftOrderScreenState.Recording -> render(state)
+			DraftOrderScreenState.StopRecording -> stopRecordingRender()
 		}
 	}
 
@@ -54,5 +55,10 @@ class DraftOrderFragment : MviFragment<DraftOrderScreenState, DraftOrderScreenEv
 	private fun render(state: DraftOrderScreenState.Recording) {
 		order_draft_voice_input.setImageResource(R.drawable.ic_senser_temperature)
 		order_draft_voice_input.setOnClickListener { viewModel.notice(DraftOrderScreenEvent.StopSpeak) }
+	}
+
+	private fun stopRecordingRender(){
+		order_draft_voice_input.setImageResource(R.drawable.ic_microphone)
+		order_draft_voice_input.setOnClickListener { viewModel.notice(DraftOrderScreenEvent.StartSpeak) }
 	}
 }

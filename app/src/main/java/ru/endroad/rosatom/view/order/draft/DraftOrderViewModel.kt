@@ -46,7 +46,7 @@ class DraftOrderViewModel(
 
 	private fun reduce(event: DraftOrderScreenEvent.StopSpeak) {
 		recorderInteractor.stop()
-		state.tryEmit(DraftOrderScreenState.Initialized)
+		state.tryEmit(DraftOrderScreenState.StopRecording)
 		notice(DraftOrderScreenEvent.SendAudioFile)
 	}
 
